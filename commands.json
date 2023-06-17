@@ -1,0 +1,64 @@
+{
+    "commands": {
+        "start song": {
+            "module": "spotify_control",
+            "function": "start",
+            "aliases": ["resume", "resume song", "start song"],
+            "arguments": []
+        },
+        "skip song": {
+            "module": "spotify_control",
+            "function": "skip",
+            "aliases": ["play next song", "next song", "skip", "skip song"],
+            "arguments": []
+        },
+        "pause song": {
+            "module": "spotify_control",
+            "function": "pause",
+            "aliases": ["pause", "stop", "stop song", "pause song"],
+            "arguments": []
+        },
+        "previous song": {
+            "module": "spotify_control",
+            "function": "previous",
+            "aliases": ["play previous song", "previous", "previous song"],
+            "arguments": []
+        },
+        "set spotify volume": {
+            "module": "spotify_control",
+            "function": "set_volume",
+            "aliases": ["turn volume", "set song volume", "set spotify volume"],
+            "arguments": ["volume"]
+        },
+        "play song": {
+            "module": "spotify_control",
+            "function": "play_song",
+            "aliases": ["play song"],
+            "arguments": ["song_name"]
+        },
+        "transfer to": {
+            "module": "spotify_control",
+            "function": "transfer_to_device",
+            "aliases": ["move to", "transfer to"],
+            "arguments": ["device_id"]
+        },
+        "add to queue": {
+            "module": "spotify_control",
+            "function": "add_to_queue",
+            "aliases": ["add song", "add to queue"],
+            "arguments": ["song_name"]
+        },
+        "add word": {
+            "module": "word_list",
+            "function": "add_word",
+            "aliases": ["add word", "add new word", "set word"],
+            "arguments": ["word"]
+        },
+        "get words": {
+            "module": "word_list",
+            "function": "get_words",
+            "aliases": ["give word list"],
+            "arguments": []
+        }
+    }
+}

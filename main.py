@@ -6,8 +6,8 @@ from commands.spotify_control import skip
 import json
 import importlib
 import colorama
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
 
 load_dotenv()
 
@@ -72,8 +72,6 @@ def listen_for_command():
                     else:
                         command_func()
                     break
-            else:
-                print('Command not regoznied.')
         
     except sr.UnknownValueError:
         print("Sorry, I didn't understand that.")
@@ -81,7 +79,7 @@ def listen_for_command():
         print("Sorry, I couldn't request results from the speech recognition service.")
 
 # Paths to Porcupine's keyword files (you need to provide your own)
-keyword_path = "./hey-victor_en_windows_v2_2_0.ppn"
+keyword_path = "./Jarvis_en_windows_v2_2_0.ppn"
 
 while True:
     listen_for_trigger_phrase(keyword_path)
