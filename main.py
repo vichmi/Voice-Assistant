@@ -79,7 +79,7 @@ def listen_for_command():
         print("Sorry, I couldn't request results from the speech recognition service.")
 
 # Paths to Porcupine's keyword files (you need to provide your own)
-keyword_path = "./Jarvis_en_windows_v2_2_0.ppn"
+keyword_path = "./hey-victor_en_windows_v2_2_0.ppn"
 
 while True:
     listen_for_trigger_phrase(keyword_path)
