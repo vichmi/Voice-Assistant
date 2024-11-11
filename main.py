@@ -8,6 +8,10 @@ import importlib
 import colorama
 import os
 from dotenv import load_dotenv
+import pyttsx3
+
+engine = pyttsx3.init()
+
 
 load_dotenv()
 
@@ -47,6 +51,8 @@ def listen_for_command():
         print("Recognizing...")
         command = r.recognize_google(audio).lower()
         print("You said:", command)
+        engine.say("You said: " + command)
+        engine.runAndWait()
         
         command_parts = command.split(' ')
 
@@ -79,8 +85,9 @@ def listen_for_command():
         print("Sorry, I couldn't request results from the speech recognition service.")
 
 # Paths to Porcupine's keyword files (you need to provide your own)
-keyword_path = "./hey-victor_en_windows_v2_2_0.ppn"
+keyword_path = "./Hey-Victor_en_windows_v3_0_0.ppn"
 
 while True:
+    engine.runAndWait()
     listen_for_trigger_phrase(keyword_path)
     listen_for_command()

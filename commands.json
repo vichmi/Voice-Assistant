@@ -33,7 +33,7 @@
         "play song": {
             "module": "spotify_control",
             "function": "play_song",
-            "aliases": ["play song"],
+            "aliases": ["play song", "play spotify song", "play"],
             "arguments": ["song_name"]
         },
         "transfer to": {
@@ -47,24 +47,6 @@
             "function": "add_to_queue",
             "aliases": ["add song", "add to queue"],
             "arguments": ["song_name"]
-        },
-        "add word": {
-            "module": "word_list",
-            "function": "add_word",
-            "aliases": ["add word", "add new word", "set work"],
-            "arguments": ["word"]
-        },
-        "get words": {
-            "module": "word_list",
-            "function": "get_words",
-            "aliases": ["give word list"],
-            "arguments": ["order_by"]
-        },
-        "open file": {
-            "module": "open_file",
-            "function": "open_file",
-            "aliases": ["open file", "start file"],
-            "arguments": ["file_name"]
         },
         "shutdown": {
             "module": "computer_commands",

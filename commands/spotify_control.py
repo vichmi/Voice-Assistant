@@ -5,6 +5,7 @@ import base64
 import json
 import requests
 from spotipy.oauth2 import SpotifyOAuth
+from urllib.error import HTTPError
 
 load_dotenv()
 
@@ -16,10 +17,14 @@ CLIENT_ID = os.getenv('SPOTIFY_CLIENT_ID')
 CLIENT_SECRET = os.getenv('SPOTIFY_CLIENT_SECRET')
 
 def search(query, type = 'track'):
-    res = sp.search(query, type=type)
-    one_res = res['tracks']['items'][0]
-    return [one_res['uri']]
-
+    try:
+        res = sp.search(query, type=type)
+        one_res = res['tracks']['items'][0]
+        return [one_res['uri']]
+    except HTTPError as err:
+        if err.code == 404:
+            print(err)
+        else: pass
 def skip(): sp.next_track()
 def pause(): sp.pause_playback()
 def previous(): sp.previous_track()
@@ -38,11 +43,3 @@ def add_to_queue(song_name):
     print(song_name)
     uri = search(song_name)
     sp.add_to_queue(uri[0])
-# def play_playlist(playlist_name):
-#     uri = search(playlist_name, type = 'playlist')
-#     sp.start_playback(context_uri = uri)
-
-# # play_playlist()
-# print(sp.current_user_playlists())
-
-# # playlist_add_items(playlist_id, items, position=None)
