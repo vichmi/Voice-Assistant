@@ -85,7 +85,7 @@ def listen_for_command():
         print("Sorry, I couldn't request results from the speech recognition service.")
 
 # Paths to Porcupine's keyword files (you need to provide your own)
-keyword_path = "./Hey-Victor_en_windows_v3_0_0.ppn"
+keyword_path = f"./{os.getenv('VOICE_RECOGNITION_FILE')}"
 
 while True:
     engine.runAndWait()
